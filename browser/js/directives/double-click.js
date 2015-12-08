@@ -5,10 +5,10 @@ app.directive("doubleClick", function(){
 			doubleClick: "&"
 		},
 		link: function(scope, element){
-			var clickElement = document.getElementById("row")
-			clickElement.ondblclick = function(){
+			element.on("dblclick", function(){
 				scope.doubleClick();
-			};
+				scope.$apply();
+			});
 		}
 	}
 })
